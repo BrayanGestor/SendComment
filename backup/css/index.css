@@ -1,0 +1,65 @@
+
+
+
+#fundo{
+	background-image: url(./img/fundo.jpg);
+}
+.box_log{	
+	height: auto;
+	margin: auto;
+}
+.box_log > div{
+	width: 50%;
+	height: auto;
+	margin: 10% auto;
+	text-align: center;
+	padding: 10px;
+	background: white;
+	font-size: 1.2rem;
+	box-shadow: 0px 5px 0.5em darkgrey ;
+}
+.box_log div label{
+	color: black;
+	padding: 2% 1% 2% 0%;
+
+}
+.box_log h1{
+	font-size: 2.5rem;
+	color: #274472;
+}
+.box_log input{
+	color: black;
+	font-size: 1rem;
+	padding: 5px 10px;
+	margin: 1.5% 0%;
+	width: 50%;
+}
+
+.box_log .btn_login{
+	width: 65%;
+	padding: 3%;
+	font-size: 1.5rem;
+	border: none;
+	margin: 3% 0% 3% 0%;
+	background: #274472;
+	color: white;
+	border-radius: 5px;
+}
+
+.box_log .btn_login:hover{
+	background: #C3E0E5;
+	color: #274472;
+}
+
+.box_log div p{
+	width: 63%;
+	font-size: 1.2rem;
+	display: none;
+	margin: 0% auto 3% auto;
+	padding: 3% 1%;
+	background: red;
+	overflow-wrap: break-word;
+	word-wrap: break-word;
+    word-break: break-word;
+    word-spacing: 10px;
+}

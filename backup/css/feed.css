@@ -1,0 +1,167 @@
+
+/*
+
+
+colors
+#0576A4 
+#393167 
+#A34E9B 
+#FAEDF9
+#FFFBFA
+#152756 
+#061744 
+
+*/
+
+
+body{
+	font-size: 1rem;
+	font-family: Arial, Helvetica,sans-serif;
+	color: white;
+	background: #FFFBFA ;
+	margin: auto;
+	
+}
+
+
+/* header */
+.header{
+	width: 100%;
+	min-height: 10%;
+	background-color: #061744 ;
+	padding: 1%;
+	position: relative;
+}
+.header .nav{
+	width: 30%;
+	float: left;
+}
+.nav img{
+	float: left;
+	border-radius: 50px;
+	width: 25%;
+}
+.nav button{
+	float: left;
+	width: 40%;
+	padding: 2% 3%;
+	margin-left: 2%;
+	border: none;
+	border-radius: 5px;
+	background-color: #061744;
+	color: white ;
+}
+.nav button:hover{
+	background-color: #A34E9B ;
+	color: white;
+}
+.header .menu{
+	width: 70%;
+	height: auto;
+	float: left;
+}
+
+.menu li{
+	display: inline-block;
+	padding: 2% 4%;
+	margin-left: 0.5%;
+	float: left;
+	background-color: #061744;
+	color: white;
+	border-radius: 4px;
+	margin-left: 7%;
+}
+.menu li:hover{
+	background-color:  #152756;
+}
+
+.content_all{
+	width: 100%;
+	min-height: 300px;
+	float: left;
+	position: relative;
+}
+
+
+/* INDEX */
+.box_center{
+	width: 50%;
+	min-height: 30%;
+	float: left;
+	
+	
+}
+.box-comment{
+	width: 80%;
+	margin: auto;
+	text-align: center;
+}
+
+.box_center h1{
+	font-size: 1.8rem;
+	color: #061744 ;
+	text-align: center;
+	margin: 2% auto 0% auto;
+	padding: 2% 0% 2% 10%;
+	float: left;
+
+}
+.text_comment{
+	width: 100%;
+	min-height: 10%;
+	text-align: left;
+	margin: 3% auto;
+	border: 1px solid #ccc;
+}
+ .btn_comment{
+	width: 100%;
+	padding: 1.5%;
+	font-size: 1.5rem;
+	border: none;
+	background: #393167 ;
+	color: white;
+}
+.box_center .btn_comment:hover{
+	background: #152756 ;
+	color: white ;
+}
+
+
+
+/* POST */
+form input[type='file']{
+	display: none;
+}
+
+.imgPost{
+	width: 50%;
+	border:1px solid #A34E9B ;
+ 	border-radius: 5px;
+ 	color: #A34E9B;
+ 	font-style: bold;
+  	cursor: pointer;
+  	padding: 3%;
+  	margin-top: 3%;
+  	float: right;
+}
+.imgPost label{
+	cursor: pointer;
+}
+.imgPost:hover{
+	background-color: #A34E9B;
+	color: white;
+}
+
+
+
+/*  Show post */
+.box_post{
+	width: 49.5%;
+	min-height: 82%;
+	float: left;
+	background-color: green;
+}
+
+
+
+

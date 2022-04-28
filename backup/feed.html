@@ -1,0 +1,67 @@
+<!Doctype>
+<html>
+	<head>
+		<title>Play with Javascript</title>
+		<link rel="stylesheet" type="text/css" href="./css/feed.css">
+	</head>
+	<body>
+
+		<noscript>
+			<script>
+
+				document.addEventListener("change", function(){
+				if(userStatus == false){
+					window.location = "index.html";
+				}else{
+					return userStatus = true;
+''				}
+			});
+		</script>
+
+		</noscript>
+
+			<!-- Menu Priority and Perfil -->
+			<div class="header">
+				<div class="nav">
+					<img src="./img/perfil.png" alt="perfil" width="100px" height="auto">
+					<button>Alterar nome</button><br/>
+					<button>Alterar foto</button>
+				</div>
+				<div class="menu">
+					<ul>
+						<li onclick="feedAll()">Feed All</li>
+						<li onclick="onlyImage()">Only Image</li>
+						<li onclick="onlyComment()">Only Comment</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="content_all">
+
+				<!-- Create post -->
+				<div class="box_center">
+					<h1>Create Post</h1>
+					<form class="box-comment">
+						<div class="imgPost" name="btnImagePost" onclick="setButton()">
+							<label for="input-file">POST IMAGE
+								<input type="file" id="input-file" value=""  />
+							</label>
+							<span id="file-name"></span>
+						</div>
+
+						<textarea class="text_comment" name="text_comment" id="comment" maxlength="250"></textarea>
+						<button class="btn_comment" onclick="sendComment()">Comment</button>
+					</form>
+				</div>
+
+
+				<!-- Show post -->
+				<div class="box_post">
+					svbsildvbsldbvdk
+				</div>
+
+			</div>
+
+		<script type="text/javascript" src="./js/script.js"></script>
+	</body>
+</html>

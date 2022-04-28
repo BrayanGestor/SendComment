@@ -1,0 +1,187 @@
+
+/* BOX CENTER   */
+
+body{
+	font-size: 1rem;
+	font-family: helvetica, sans-serif;
+}
+
+.fundo{
+	background-image: url(./img/fundo.jpg);
+	width: 99.8%;
+	height: auto;
+}
+
+
+.box_log{
+	width: 80%;
+	height: auto;
+	margin: auto;
+}
+.box_log > div{
+	width: 50%;
+	height: auto;
+	margin: 10% auto;
+	text-align: center;
+	background-color: white;
+	font-size: 1.2rem;
+	box-shadow: 0px 5px 0.5em darkgrey ;
+}
+
+.box_log input{
+	color: black;
+	font-size: 1rem;
+	padding: 5px 10px;
+	margin: 1.5% 0%;
+	width: 50%;
+}
+
+.box_log .btn_login{
+	width: 65%;
+	padding: 3%;
+	font-size: 1.5rem;
+	border: none;
+	margin: 3% 0% 3% 0%;
+	background: #9C4EA4;
+	color: white;
+	border-radius: 5px;
+}
+
+.box_log .btn_login:hover{
+	background: white;
+	color: #9C4EA4;
+	border: 2px solid #9C4EA4;
+}
+
+
+
+
+
+
+/* Form of Sign Up */
+
+.top_title{
+	width:100%;
+	margin: auto;
+	padding: 5% 0%;
+	font-size: 1rem;
+	text-align: left;
+
+}
+.box_sign{
+	width: 100%;
+	margin: auto;
+}
+
+.top_title div{
+	width: 90%;
+	padding: 5% 0% 0% 10%;
+	margin: 5% 0%;
+	text-align: left;
+	color: white;
+	font-size: 2rem;
+	float: left;
+	background-color:#9C4EA4 ;
+}
+
+
+.top_title div span{
+	width: 100%;
+	color: white;
+	font-style: italic;
+	padding: 3% 0%;
+	font-size: 1.2rem;
+	float: left;
+}
+
+
+.box_log input::placeholder{
+	color: #grey;
+	text-decoration: none;
+}
+
+.fname{
+	width: 100%;
+}
+
+.fname input{
+	margin: auto;
+	width: 40%;
+	margin-left: 1%;
+	border: 1px solid #9C4EA4;
+	padding: 1%;
+}
+
+.femail input{
+	margin: auto;
+	width: 81.5%;
+	margin-left: 1%;
+	margin-top: 1.5%;
+	border: 1px solid #9C4EA4;
+	padding: 1%;
+
+}
+
+
+.fpassword{
+	width: 100%;
+}
+
+.fpassword input{
+	margin: auto;
+	width: 39.8%;
+	margin-top: 1.5%;
+	margin-left: 1%;
+	border: 1px solid #9C4EA4;
+	padding: 1%;
+}
+
+
+
+.faddress{
+	width: 100%;
+}
+
+.faddress input{
+	margin: auto;
+	width: 81.5%;
+	margin-left: 1%;
+	margin-top: 1%;
+	border: 1px solid #9C4EA4;
+	padding: 1%;
+
+}
+
+
+.faddress_cont{
+	width: 100%;
+	margin: auto;
+}
+
+.faddress_cont input{
+	margin: auto;
+	margin-top: 2%;
+	border: 1px solid #9C4EA4;
+}
+
+.faddress_cont input[name='zipCode']{
+	width: 25%;
+	margin-left: 1%;
+}
+
+.faddress_cont input[name='city']{
+	width: 30%;
+}
+.faddress_cont input[name='numHouse']{
+	width: 25%;
+}
+
+.faddress_cont input[name='state']{
+	width: 40%;
+	margin-left: 1%;
+}
+
+.faddress_cont input[name='country']{
+	width: 40%;
+	margin-left: 1%;
+}
