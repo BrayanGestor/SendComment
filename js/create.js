@@ -1,6 +1,6 @@
 //GLOBAL LET
 var userStatus;
-let userDate = new Array();
+let userInformation = new Array();
 let tabUsers = new Array();
 let i,x;
 
@@ -66,32 +66,30 @@ function signUp(){
 			break;
 		}
 
-		userDate["id"] = x;
-		userDate["userName"] = document.getElementById('fname').value;
+		userInformation.push = x;
 
-		userDate["userLastName"] = document.getElementById('lname').value;
+		userInformation.push =document.getElementById('lname').value;
 
-		userDate["userEmail"] = document.getElementById('femail').value;
-		userDate["userRepeatEmail"] = document.getElementById('r_email').value;
+		userInformation.push =document.getElementById('femail').value;
+		userInformation.push = document.getElementById('r_email').value;
 
-		userDate["userPassword"] = document.getElementById('fpassword').value;
-		userDate["userRepeatPassword"] = document.getElementById('r_password').value;
+		userInformation.push = document.getElementById('fpassword').value;
+	
+		userInformation.push = document.getElementById('r_password').value;
 
-		userDate["userAddress"] = document.getElementById('faddress').value;
+		userInformation.push = document.getElementById('faddress').value;
 
-		userDate["userZipCode"] = document.getElementById('fzipCode').value;
+		userInformation.push = document.getElementById('fzipCode').value;
 
-		userDate["userCity"] = document.getElementById('fcity').value;
+		userInformation.push = document.getElementById('fcity').value;
 
-		userDate["userState"] = document.getElementById('fstate').value;
+		userInformation.push = document.getElementById('fstate').value;
 
-		userDate["userCountry"] = document.getElementById('fcountry').value;
+		userInformation.push = document.getElementById('fcountry').value;
 
 
 		checkDate();
 
-	}else{
-		window.location = "feed.html";
 	}
 
 }
@@ -100,44 +98,13 @@ function signUp(){
 
 function checkDate(){
 
-	if(userDate["id"] != null || userDate["id"] != 0 || userDate["id"] != undefined){
-		if(userDate["userName"] != null || userDate["userName"] != 0 || userDate["userName"] != undefined){
-			if(userDate["userLastName"] != null || userDate["userLastName"] != 0 || userDate["userLastName"] != undefined){
-				if(userDate["userPassword"] != null || userDate["userPassword"] != 0 || userDate["userPassword"] != undefined){
-					if(userDate["userAddress"] != null || userDate["userAddress"] != 0 || userDate["userAddress"] != undefined){
-						if(userDate["userZipCode"] != null || userDate["userZipCode"] != 0 || userDate["userZipCode"] != undefined){
-							if(userDate["userCity"] != null || userDate["userCity"] != 0 || userDate["userCity"] != undefined){
-								if(userDate["userState"] != null || userDate["userState"] != 0 || userDate["userState"] != undefined){
-									if(userDate["userCountry"] != null || userDate["userCountry"] != 0 || userDate["userCountry"] != undefined){
-										userStatus = true;
+	const checkFunc =  userInformation.push != null || userInformation.push != 0 || userInformation.push != undefined;
 
-									}
-								}
+	if(checkFunc){
 
-							}
-
-						}
-
-					}
-
-				}
-
-			}
-
-		}
+		userStatus = true;
 
 	}
 	
 }
 
-
-function Status(){
-
-	if(userStatus == true){
-	tabUsers[x] = userDate;
-	window.location = "feed.html";
-	}
-
-	console.log("ok3")
-
-}
