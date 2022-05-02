@@ -1,110 +1,220 @@
 //GLOBAL LET
 var userStatus;
 let userInformation = new Array();
-let tabUsers = new Array();
-let i,x;
+let divLocate, msgError, i, x, y, z;
+
+
+function getInformation(id){
+
+	divLocate = document.getElementById(id);
+}
+
+function getEmail(x,y){
+	
+	getInformation(x);
+	var cEmail = divLocate.value;
+
+	getInformation(y);
+	var cRepeatEmail = divLocate.value;
+
+	showMsgError(cEmail,cRepeatEmail);
+}
+
+
+
+function getPassword(x,y){
+
+	getInformation(x);
+	var cPassword = divLocate.value;
+
+	getInformation(y);
+	var cRepeatPassword = divLocate.value;
+
+	showMsgError(cPassword,cRepeatPassword);
+}
+
+
+
+function initError(){
+	getInformation('msgError');
+	msgError = divLocate;
+}
+
+function showMsgError(x,y){
+
+	if(x != y){
+
+		initError();
+
+		divLocate.style.display = "block";
+
+		divLocate.innerHTML = `Your ${y} is different, please verify!!!`;
+
+
+	}
+
+	keep(x,y);
+}
+
+
+function keep(x,y){
+
+	if (x == y){
+		initError();
+		msgError.style.display = "none";
+	}
+	
+}
 
 
 
 // Check Email is igual
 
 function checkEmail(){
-	let msgError = document.getElementById('msgError');
-	var email = document.getElementById('femail').value;
-	var repeatEmail = document.getElementById('r_email').value;
 
+	var e = 'femail';
+	var r = 'r_email';
 
-	if(email != repeatEmail){
-		msgError.style.display = "block";
+	getEmail(e,r);
 
-		msgError.innerHTML = "Your email is different, please verify!!!";
-
-	}
-	if(email == repeatEmail){
-		msgError.style.display = "none";
-	}
-	
 }
 
 
 // Check PassWord is igual
 function checkPassword(){
 
-	let msgError = document.getElementById('msgError');
-	var cPassword = document.getElementById('fpassword').value;
-	var cRepeatPassword = document.getElementById('r_password').value;
+	var p = 'fpassword';
+	var c = 'r_password';
 
-
-	if(cPassword != cRepeatPassword){
-		msgError.style.display = "block";
-
-		msgError.innerHTML = "Your email is different, please verify!!!"
-	}
-	if(cPassword == cRepeatPassword){
-
-		msgError.style.display = "none";
-	}
+	getPassword(p,c);
 	
 }
 
-
-
-
-
+function addValue(x){
+	userInformation.push(x);
+}
 
 // Create User
 
 function signUp(){
 
-	if( userStatus == false){
+	getInformation('fname');
+	addValue(divLocate.value)
 
-		checkUserId = tabUsers.length;
+	getInformation('lname');
+	addValue(divLocate.value)
 
-		for(var i = 0; i <= checkUserId;){
+	getInformation('femail');
+	addValue(divLocate.value)
 
-			x = checkUserId + 1;
-			break;
-		}
+	getInformation('r_email');
+	addValue(divLocate.value)
 
-		userInformation.push = x;
+	getInformation('fpassword');
+	addValue(divLocate.value);
 
-		userInformation.push =document.getElementById('lname').value;
+	getInformation('r_password');
+	addValue(divLocate.value)
 
-		userInformation.push =document.getElementById('femail').value;
-		userInformation.push = document.getElementById('r_email').value;
+	getInformation('faddress');
+	addValue(divLocate.value)
 
-		userInformation.push = document.getElementById('fpassword').value;
+	getInformation('fzipCode');
+	addValue(divLocate.value)
+
+	getInformation('fcity');
+	addValue(divLocate.value)
+
+	getInformation('fstate');
+	addValue(divLocate.value)
+
+	getInformation('fcountry');
+	addValue(divLocate.value)
+
+
+		checkNull();
+		checkEmpty();
+		checkUndef();
 	
-		userInformation.push = document.getElementById('r_password').value;
-
-		userInformation.push = document.getElementById('faddress').value;
-
-		userInformation.push = document.getElementById('fzipCode').value;
-
-		userInformation.push = document.getElementById('fcity').value;
-
-		userInformation.push = document.getElementById('fstate').value;
-
-		userInformation.push = document.getElementById('fcountry').value;
+}
 
 
-		checkDate();
+function msgErrorForm(id){
 
+	var userInf = id;
+
+
+	console.log(userInf);
+
+	if(userInformation[id] == null){
+
+		initError();
+
+		msgError.innerHTML = `The field ${userInformation[id]} be null, please verify!!!`;
+
+		return;
+	}
+
+	if(userInformation[id] == 0){
+
+		initError();
+		msgError.innerHTML = `The field ${userInformation[id]} be empty, please verify!!!`;
+
+		return;
+	}
+
+	if(userInformation[id] == undefined){
+
+		initError();
+		msgError.innerHTML = `The field ${userInformation[id]} be undefined, please verify!!!`;
+
+		return;
+	}
+}
+
+function checkNull(){
+
+	for(i = 0; i < userInformation.length; i++ ){
+		userInformation[i];
+
+		if(userInformation[i] == null){
+			msgError = true;
+			msgErrorForm(i);
+			return;
+		}
+	
 	}
 
 }
 
+function checkEmpty(){
 
+	for(i = 0; i < userInformation.length; i++ ){
 
-function checkDate(){
+		if(msgError != true){
 
-	const checkFunc =  userInformation.push != null || userInformation.push != 0 || userInformation.push != undefined;
+			if(userInformation[i] == 0){
+				msgError = true;
+				msgErrorForm(i);
+				return;
 
-	if(checkFunc){
+			}
 
-		userStatus = true;
-
+		}
 	}
-	
+}
+
+function checkUndef(){
+
+	for(i = 0; i < userInformation.length; i++ ){
+		userInformation[i];
+
+		if(userInformation[i] == undefined){
+			msgError = true;
+			msgErrorForm(i);
+			return;
+		}
+	}
+
 }
 

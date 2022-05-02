@@ -1,0 +1,40 @@
+<!Doctype>
+<html>
+	<head>
+		<title>Play with Javascript</title>
+		<meta http-equiv="refresh" content="500">
+		<link rel="stylesheet" type="text/css" href="./css/comment.css">
+	</head>
+	<body onload="loadNewComment()">
+
+			<!-- Menu Priority and Perfil -->
+			<div class="header">
+				<div class="nav">
+					<img src="./img/perfil.png" alt="perfil">
+					<h1>Brayan Quintino</h1><br/>
+					<button onclick="logout()" class="logout">Logout</button>
+					<button onclick="changeProfile()" class="change">Change Profile</button>
+					
+				</div>
+				<div class="menu">
+					<ul>
+						<li onclick="loadPage('feed')">Feed All</li>
+						<li onclick="loadPage('image')">Only Image</li>
+						<li onclick="loadPage('comment')">Only Comment</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="content_center">
+					<!-- Show post -->
+				<div class="box_post" id="1">
+					<div class="post_menu" id="boxComment">
+						<div class="box_post_comment" id="box_comment">
+						</div>
+					</div>
+				</div>
+			</div>
+
+		<script type="text/javascript" src="./js/feed.js"></script>
+	</body>
+</html>
