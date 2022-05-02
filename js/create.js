@@ -1,143 +1,220 @@
 //GLOBAL LET
 var userStatus;
-let userDate = new Array();
-let tabUsers = new Array();
-let i,x;
+let userInformation = new Array();
+let divLocate, msgError, i, x, y, z;
+
+
+function getInformation(id){
+
+	divLocate = document.getElementById(id);
+}
+
+function getEmail(x,y){
+	
+	getInformation(x);
+	var cEmail = divLocate.value;
+
+	getInformation(y);
+	var cRepeatEmail = divLocate.value;
+
+	showMsgError(cEmail,cRepeatEmail);
+}
+
+
+
+function getPassword(x,y){
+
+	getInformation(x);
+	var cPassword = divLocate.value;
+
+	getInformation(y);
+	var cRepeatPassword = divLocate.value;
+
+	showMsgError(cPassword,cRepeatPassword);
+}
+
+
+
+function initError(){
+	getInformation('msgError');
+	msgError = divLocate;
+}
+
+function showMsgError(x,y){
+
+	if(x != y){
+
+		initError();
+
+		divLocate.style.display = "block";
+
+		divLocate.innerHTML = `Your ${y} is different, please verify!!!`;
+
+
+	}
+
+	keep(x,y);
+}
+
+
+function keep(x,y){
+
+	if (x == y){
+		initError();
+		msgError.style.display = "none";
+	}
+	
+}
 
 
 
 // Check Email is igual
 
 function checkEmail(){
-	let msgError = document.getElementById('msgError');
-	var email = document.getElementById('femail').value;
-	var repeatEmail = document.getElementById('r_email').value;
 
+	var e = 'femail';
+	var r = 'r_email';
 
-	if(email != repeatEmail){
-		msgError.style.display = "block";
+	getEmail(e,r);
 
-		msgError.innerHTML = "Your email is different, please verify!!!";
-
-	}
-	if(email == repeatEmail){
-		msgError.style.display = "none";
-	}
-	
 }
 
 
 // Check PassWord is igual
 function checkPassword(){
 
-	let msgError = document.getElementById('msgError');
-	var cPassword = document.getElementById('fpassword').value;
-	var cRepeatPassword = document.getElementById('r_password').value;
+	var p = 'fpassword';
+	var c = 'r_password';
 
-
-	if(cPassword != cRepeatPassword){
-		msgError.style.display = "block";
-
-		msgError.innerHTML = "Your email is different, please verify!!!"
-	}
-	if(cPassword == cRepeatPassword){
-
-		msgError.style.display = "none";
-	}
+	getPassword(p,c);
 	
 }
 
-
-
-
-
+function addValue(x){
+	userInformation.push(x);
+}
 
 // Create User
 
 function signUp(){
 
-	if( userStatus == false){
+	getInformation('fname');
+	addValue(divLocate.value)
 
-		checkUserId = tabUsers.length;
+	getInformation('lname');
+	addValue(divLocate.value)
 
-		for(var i = 0; i <= checkUserId;){
+	getInformation('femail');
+	addValue(divLocate.value)
 
-			x = checkUserId + 1;
-			break;
-		}
+	getInformation('r_email');
+	addValue(divLocate.value)
 
-		userDate["id"] = x;
-		userDate["userName"] = document.getElementById('fname').value;
+	getInformation('fpassword');
+	addValue(divLocate.value);
 
-		userDate["userLastName"] = document.getElementById('lname').value;
+	getInformation('r_password');
+	addValue(divLocate.value)
 
-		userDate["userEmail"] = document.getElementById('femail').value;
-		userDate["userRepeatEmail"] = document.getElementById('r_email').value;
+	getInformation('faddress');
+	addValue(divLocate.value)
 
-		userDate["userPassword"] = document.getElementById('fpassword').value;
-		userDate["userRepeatPassword"] = document.getElementById('r_password').value;
+	getInformation('fzipCode');
+	addValue(divLocate.value)
 
-		userDate["userAddress"] = document.getElementById('faddress').value;
+	getInformation('fcity');
+	addValue(divLocate.value)
 
-		userDate["userZipCode"] = document.getElementById('fzipCode').value;
+	getInformation('fstate');
+	addValue(divLocate.value)
 
-		userDate["userCity"] = document.getElementById('fcity').value;
-
-		userDate["userState"] = document.getElementById('fstate').value;
-
-		userDate["userCountry"] = document.getElementById('fcountry').value;
-
-
-		checkDate();
-
-	}else{
-		window.location = "feed.html";
-	}
-
-}
+	getInformation('fcountry');
+	addValue(divLocate.value)
 
 
-
-function checkDate(){
-
-	if(userDate["id"] != null || userDate["id"] != 0 || userDate["id"] != undefined){
-		if(userDate["userName"] != null || userDate["userName"] != 0 || userDate["userName"] != undefined){
-			if(userDate["userLastName"] != null || userDate["userLastName"] != 0 || userDate["userLastName"] != undefined){
-				if(userDate["userPassword"] != null || userDate["userPassword"] != 0 || userDate["userPassword"] != undefined){
-					if(userDate["userAddress"] != null || userDate["userAddress"] != 0 || userDate["userAddress"] != undefined){
-						if(userDate["userZipCode"] != null || userDate["userZipCode"] != 0 || userDate["userZipCode"] != undefined){
-							if(userDate["userCity"] != null || userDate["userCity"] != 0 || userDate["userCity"] != undefined){
-								if(userDate["userState"] != null || userDate["userState"] != 0 || userDate["userState"] != undefined){
-									if(userDate["userCountry"] != null || userDate["userCountry"] != 0 || userDate["userCountry"] != undefined){
-										userStatus = true;
-
-									}
-								}
-
-							}
-
-						}
-
-					}
-
-				}
-
-			}
-
-		}
-
-	}
+		checkNull();
+		checkEmpty();
+		checkUndef();
 	
 }
 
 
-function Status(){
+function msgErrorForm(id){
 
-	if(userStatus == true){
-	tabUsers[x] = userDate;
-	window.location = "feed.html";
+	var userInf = id;
+
+
+	console.log(userInf);
+
+	if(userInformation[id] == null){
+
+		initError();
+
+		msgError.innerHTML = `The field ${userInformation[id]} be null, please verify!!!`;
+
+		return;
 	}
 
-	console.log("ok3")
+	if(userInformation[id] == 0){
+
+		initError();
+		msgError.innerHTML = `The field ${userInformation[id]} be empty, please verify!!!`;
+
+		return;
+	}
+
+	if(userInformation[id] == undefined){
+
+		initError();
+		msgError.innerHTML = `The field ${userInformation[id]} be undefined, please verify!!!`;
+
+		return;
+	}
+}
+
+function checkNull(){
+
+	for(i = 0; i < userInformation.length; i++ ){
+		userInformation[i];
+
+		if(userInformation[i] == null){
+			msgError = true;
+			msgErrorForm(i);
+			return;
+		}
+	
+	}
 
 }
+
+function checkEmpty(){
+
+	for(i = 0; i < userInformation.length; i++ ){
+
+		if(msgError != true){
+
+			if(userInformation[i] == 0){
+				msgError = true;
+				msgErrorForm(i);
+				return;
+
+			}
+
+		}
+	}
+}
+
+function checkUndef(){
+
+	for(i = 0; i < userInformation.length; i++ ){
+		userInformation[i];
+
+		if(userInformation[i] == undefined){
+			msgError = true;
+			msgErrorForm(i);
+			return;
+		}
+	}
+
+}
+

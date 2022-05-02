@@ -1,17 +1,4 @@
 
-/*
-
-
-colors
-#0576A4 
-#393167 
-#A34E9B 
-#FAEDF9
-#FFFBFA
-#152756 
-#061744 
-
-*/
 
 
 body{
@@ -33,7 +20,7 @@ body{
 	position: relative;
 }
 .header .nav{
-	width: 35%;
+	width: 33%;
 	float: left;
 }
 .nav img{
@@ -112,94 +99,20 @@ body{
 
 
 
-/* INDEX */
-.box_center{
-	width: 99%;
-	min-height: 30%;
-	padding-top: 5%;
-	float: left;
-	
-}
+/* ONLY */
 
-.border_bottom{
-	width: 95%;
-	padding-bottom: 5%;
-	border-bottom: 1px solid purple;
-	margin: auto;
-}
-
-
-.box-comment{
-	width: 80%;
-	margin: auto;
-	text-align: center;
-}
-
-.box_center h1{
-	font-size: 1.8rem;
-	color: #061744 ;
-	text-align: center;
-	margin: 2% auto 0% auto;
-	padding: 2% 0% 2% 10%;
-	float: left;
-
-}
-.text_comment{
-	width: 100%;
-	min-height: 10%;
-	text-align: left;
-	padding: 3%;
-	margin: 3% auto;
-	border: 1px solid #ccc;
-}
- .btn_comment{
-	width: 100%;
-	padding: 1.5%;
-	font-size: 1.5rem;
-	border: none;
-	background: #393167 ;
-	color: white;
-}
-.box_center .btn_comment:hover{
-	background: #152756 ;
-	color: white ;
-}
-
-
-
-/* POST */
-.box-comment input[type='file']{
-	display: none;
-}
-
-.imgPost{
-	width: 48%;
-	border:1px solid #A34E9B ;
- 	border-radius: 5px;
- 	color: #A34E9B;
- 	font-style: bold;
-  	cursor: pointer;
-  	padding: 3%;
-  	margin-top: 3%;
-  	float: right;
-}
-.imgPost label{
-	cursor: pointer;
-}
-.imgPost:hover{
-	background-color: #A34E9B;
-	color: white;
+.content_center{
+	margin: 1% auto;
+	width: 50%;
+	min-height: 5%;
+	padding: 2% 10%;
 }
 
 
 
 /*  Show post */
 .box_post{
-	width: 99%;
-	padding: 5%;
-	min-height: 82%;
-	float: left;
-	border-left: 0.5px solid #A34E9B;
+	width: 100%;
 }
 
 .box_post .post_menu{
@@ -209,19 +122,23 @@ body{
 }
 
 .post_menu img{
-	width: 15%;
+	width: 10%;
 	height: auto;
 	border-radius: 50%;
 }
 
-.post_menu .edit, .post_menu .delete{
+.delete{
+	background-color: darkred !important;
+}
+.edit, .delete{
+	background-color:#061744 ;
 	width: 20%;
 	padding: 2% 5%;
-	margin-top: 3%;
+	margin-top:1%;
+	border-radius: 20px;
 	border: none;
-	background-color: #061744 ;
 	color: white;
-	margin-left: 2%;
+	margin-right: 2%;
 	float: right;
 	font-size: 1rem;
 	font-family: helvetica, sans-serif;
@@ -246,17 +163,3 @@ body{
 	width: 80%;
 	padding: 5%;
 }
-
-
-
-#createComment{
-	width: 70%;
-	padding: 5% 10%;
-	margin: 5% auto;
-	font-size: 2rem;
-	text-align: justify;
-	color: white;
-	background-color: purple;
-}
-
-

@@ -53,13 +53,10 @@
 
 .box_log div p{
 	width: 63%;
+	color: white;
 	font-size: 1.2rem;
 	display: none;
 	margin: 0% auto 3% auto;
 	padding: 3% 1%;
-	background: red;
-	overflow-wrap: break-word;
-	word-wrap: break-word;
-    word-break: break-word;
-    word-spacing: 10px;
+	background-color: indianred;
 }
